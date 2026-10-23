@@ -23,12 +23,12 @@ class BookingRepository{
     }
     async update(bookingId , data){
         try {
-                     const booking = await Booking.findByPk(bookingId);
+           const bookikng = await Booking.findByPk(bookingId);
            if(data.status){
-                        booking.status = data.status;
+            bookikng.status = data.status;
            }
-                        await booking.save();
-                        return booking;
+              await bookikng.save();
+            return true;
             
         } catch (error) {
              throw new AppError('RepositoryLayer',

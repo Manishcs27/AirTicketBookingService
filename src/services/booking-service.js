@@ -15,7 +15,7 @@ class BookingService {
            const response = await axios.get(getFlightURL);
             const flightData = response.data.data;
             let priceOfFlight = flightData.price;
-            if(data.noOfSeats > flightData.totalSeats){
+            if(data.totalSeats>flightData.totalSeats){
                 throw new ServiceError('Something went wrong in booking process','Insufficient seats')
             }
             const totalCost = priceOfFlight* data.noOfSeats;

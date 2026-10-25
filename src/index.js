@@ -14,7 +14,7 @@ const setupAndStartServer =  () => {
 
     app.use('/api', apiRoutes);
     
-        app.listen(PORT, () => { 
+        app.listen(PORT, '127.0.0.1', () => { 
             console.log(`Booking Service is running on port ${PORT}`);
             if(process.env.DB_SYNC) {
                 db.sequelize.sync({alter: true})
